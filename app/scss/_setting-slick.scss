@@ -1,0 +1,247 @@
+/* ===== Settings Slick ====== */
+
+.carousel-content {
+  width: 100%;
+  height: 430px;
+  background: #FFF;
+  margin-top: 100px;
+  display: flex;
+  justify-content: flex-end;
+
+  .redes-social {
+    display: flex;
+    width: 110px;
+    position: absolute;
+    left: 7%;
+    bottom: 5%;
+    flex-direction: column;
+
+    @media (min-width: 0px) and (max-width: 340px){
+      bottom: 15%;
+      left: 6%;
+    }
+
+    @media (min-width: 341px) and (max-width: 350px){
+      bottom: 15%;
+      left: 6%;
+    }
+
+    @media (min-width: 351px) and (max-width: 375px){
+      bottom: 15%;
+      left: 5%;
+    }
+
+    @media (min-width: 376px) and (max-width: 450px){
+      bottom: 15%;
+      left: 6%;
+    }
+    @media (min-width: 451px) and (max-width: 550px){
+      bottom: 15%;
+      left: 6%;
+    }
+
+    @media (min-width: 551px) and (max-width: 650px){
+      bottom: 15%;
+      left: 6%;
+    }
+
+    @media (min-width: 651px) and (max-width: 767px){
+      bottom: 15%;
+      left: 5%;
+    }
+
+    @include respond-to(sm) {
+      bottom: 15%;
+    }
+    
+    i {
+      margin-top: 15px;
+      font-size: 20px;
+      transition: .5s ease-in-out;
+      color: $black;
+      &:hover{
+        color: $orange-caderco;
+        transition: .5s ease-in-out;
+      }
+    }
+  }
+  .carousel-divisor {
+    width: 85%;
+    height: 100%;
+    background-color: white;
+
+    .carrusel-slider{
+      .single-item{
+        width: 100%;
+        height: 100%; 
+        margin: 0 auto;
+        .slick-prev{
+          right: 90px !important;
+          z-index: 2;
+          // border: 3px solid $white;
+          border-radius: 50px;
+          height: 40px;
+          width: 40px;
+          top: 87%;
+          // background-color: $main-caderco;
+          &:before{
+            font-size: $arrow-size;
+            color: $white;
+            content: "\f053";
+            font-family: 'FontAwesome';
+            z-index: 3;
+          }
+        }
+        .slick-next{
+          right: 20px !important;
+          z-index: 2;
+          // border: 3px solid $white;
+          border-radius: 50px;
+          height: 40px;
+          width: 40px;
+          top: 87%;
+          // background-color: $main-caderco;
+          &:before{
+            font-size: $arrow-size;
+            color: $white;
+            content: "\f054";
+            font-family: 'FontAwesome';
+          }
+        } 
+      .slick-dots {
+        bottom: 10px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 10%;
+        left: -120px;
+        width: 0%;
+
+        @include respond-to(md) {
+          left: -80px;
+        }
+        @include respond-to(sm) {
+          left: -70px;
+        }
+        @media (min-width: 0px) and (max-width: 340px){
+          left: -37px
+        }
+
+        @media (min-width: 341px) and (max-width: 350px){
+          left: -37px
+        }
+
+        @media (min-width: 351px) and (max-width: 375px){
+          left: -40px
+        }
+
+        @media (min-width: 376px) and (max-width: 450px){
+          left: -44px
+        }
+        @media (min-width: 451px) and (max-width: 550px){
+          left: -52px;
+        }
+
+        @media (min-width: 551px) and (max-width: 650px){
+          left: -60px;
+        }
+
+        @media (min-width: 651px) and (max-width: 767px){
+          left: 5%;
+        }
+
+        .slick-active {
+          button{
+            &:before{
+              color: $dots-color-active;
+              opacity: 0.75;
+              height: 30px;
+            }
+          }
+        }
+        li{
+          height: 35px;
+          button{
+
+            &:before{
+              color: $dots-color;
+              content: '';
+              height: $dots-size;
+              width: $dots-size;
+              display: inline-block;
+              background: $orange-caderco;
+              border-radius: 6px;
+              cursor: pointer;
+              transition: all 300ms ease;
+            }
+
+            &:hover:before, 
+            &:focus:before{
+              color: $dots-color-active;
+            }
+          }
+        }
+      }
+      .slick-slide {
+        height: 70vh !important;
+        img{
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+        .mask-item{
+          background: hsla(0, 0%, 0%, 0.5);
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 1;}
+          .banner-info{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 70px 70px 60px 80px;
+            
+            @include respond-to(xs){
+              padding: 70px 70px 10px 30px;
+            }
+        
+            .title-banner{
+              color: $white;
+              font-family: $montserrat;
+              font-size: 45px;
+              margin-bottom: 20px;
+              font-weight: 700;
+              
+                @include respond-to(xs){
+                  font-size: 25px;
+                  color: $white;
+                }
+            }
+            p{
+              color: $white;
+              font-size: 22px;
+              font-family: $montserrat;
+              width: 50%;
+              
+                @include respond-to(xs){
+                  font-size: 20px;
+                  color: $white;
+                  width: 100%; 
+                }
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

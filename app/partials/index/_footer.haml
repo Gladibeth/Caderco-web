@@ -1,0 +1,70 @@
+%footer.footer#footer
+  .container
+    .row
+      .col-lg-6
+        .footer-content
+          .footer-content-logo
+            %img{ :src=>"assets/img/CADERCO.svg", :alt=>""}
+          %h3 Contáctanos
+          .footer-content-inf
+            .content-inf
+              %p Correo
+              %a{ :href => ''} operaciones@caderco.com.ve
+            .content-inf
+              %p Teléfonos:
+              .content-phone
+                %span (0058)0269-2459632 / 
+                %span  2453832 / 
+                %span 2465063 / 
+                %span 2478043
+            .content-inf
+              %p Fax: 
+              %span (0058)0269-2467937
+            .content-inf
+              %p Dirección:
+              %span Calle Falcón, Esq. Argentina, C.C.E. CADERCO, Piso 4, Punto Fijo, Estado Falcón – Venezuela.
+
+      .col-lg-6
+        .footer-form
+          %form
+            .content-form
+              .control.control-expanded
+                %label(for="") Nombre y Apellido
+                %input.input.fade-background{:name => "name", :placeholder => "Nombre y Apellido", :type => "text"}/
+              .control.control-expanded
+                %label(for="") Teléfono
+                %input.input.fade-background{:name => "phone", :placeholder => "Teléfono", :type => "tel"}/
+              .control.control-expanded
+                %label(for="") Correo
+                %input.input.fade-background{:name => "email", :placeholder => "Correo", :type => "email"}/
+              .control.control-expanded
+                %label(for="") Mensaje
+                %textarea.fade-background{ :placeholder => "Escribe tú mensaje"}
+            .cta-form
+              %a.btn.btn-primary.btn-shadow{:href => "#" } Enviar
+            
+    %hr
+    .footer-company 
+      %p Copyright © CADERCO 2019 Power by
+      .img-footer-company
+        %img{ :src=>"assets/img/slice_footer.png", :alt=>""}
+%script{src: "assets/js/jquery.min.js"}
+-# %script{:src => "http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"}
+%script{src: "https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"}
+%script{src: "assets/js/isotope.js"}
+%script{src: "assets/js/bootstrap.min.js"}
+%script{src: "assets/js/slick.min.js"}
+%script{src: "assets/js/wow.min.js"}
+%script{src: "assets/js/wow-settings.js"}
+%script{src: "assets/js/setting-slick.js"}
+%script{src: "assets/js/smooth-scroll.min.js"}
+%script{src: "assets/js/main.js"}
+:javascript
+  smoothScroll.init({
+  selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
+  selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
+  speed: 2000, // Integer. How fast to complete the scroll in milliseconds
+  easing: 'easeInOutCubic', // Easing pattern to use
+  offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
+  callback: function ( anchor, toggle ) {} // Function to run after scrolling
+  });

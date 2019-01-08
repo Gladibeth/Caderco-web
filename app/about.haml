@@ -1,0 +1,68 @@
+:ruby
+  def render(partial)
+    Haml::Engine.new(File.read(partial)).render
+  end
+!!!
+%html{lang: "en"}
+  = render ('app/partials/head.haml')
+  %body
+    %section.home
+      = render ('app/partials/navbar_1.haml')
+
+      %section.banner-about
+        .banner-img
+          %img.img-responsive{:src => "assets/img/about.jpg"}
+          .banner-mask
+            .banner-inf
+              %h1.wow.animated.fadeInUp{ 'data-wow-duration' => '1500ms', 'data-wow-delay' => '.2s'  } quiénes somos
+              %p.wow.animated.fadeInUp{ 'data-wow-duration' => '1500ms', 'data-wow-delay' => '.9s'  } CADERCO NACE HACE MAS DE 65 AÑOS, DEDICADOS A BRINDAR SERVICIOS DE AGENCIAMIENTO ADUANAL PARA FACILITAR A NUESTROS CLIENTES LAS OPERACIONES DE EXPORTACIÓN, IMPORTACIÓN.
+    
+    %section.about-inf
+      .container
+        .about-content-inf
+          %p 
+            En caderco nos sentimos orgullosos con la Experiencia que hemos obtenido en el Mercado , 
+            además de contar con un personal altamente competente y comprometido en la prestación de los Servicios, 
+            estamos a orientados en Brindar servicios de excelencia para Satisfacer las Necesidades de Nuestros Clientes.
+          // %p En Caderco nuestro compromiso consiste en satisfacer las necesidades de nuestros clientes enmarcados en el contexto actual y orientados hacia nuestra dirección estratégica.
+        - about = [{title: 'Misión', description: 'Brindar servicios de Agenciamiento Aduanal, Agenciamiento Naviero, Operación Portuaria y Manejo de Materiales y Desechos Peligrosos mediante la implementación eficaz de nuestro Sistema de Gestión de la Calidad.'},{title: 'Visión', description: 'Posicionarnos a nivel nacional como proveedor de soluciones integrales en el área de servicios de Agenciamiento Aduanal, Agenciamiento Naviero, Operación Portuaria, Manejo de Materiales y Desechos Peligrosos.'},{title: 'Políticas de calidad', description: 'En caderco nuestro compromiso consiste en satisfacer las necesidades de nuestros clientes enmarcados en el contexto actual y orientados hacia nuestra dirección estratégica.'}]
+        .row.line 
+          - about.each_with_index do |about, x|
+            .col-lg-4{ class: "after-circle-#{x}"}
+              .card-about
+                .card-about-title
+                  %h3= about[:title]
+                .card-about-content
+                  %p= about[:description]
+
+    %section.team-about
+      .container
+        .row
+          .col-lg-6
+            .team-about-image.wow.animated.fadeInLeft{ 'data-wow-duration' => '1500ms', 'data-wow-delay' => '.2s'  }
+              %img{:src=>"assets/img/team.jpg", :alt=>""}
+            // .team-about-image
+            //   .row
+            //     .col-lg-3
+            //       .content-img1
+            //         .content-img-1
+            //           %img{:src=>"assets/img/01.jpg", :alt=>""}
+            //     .col-lg-3
+            //       .content-img2 
+            //         .content-img-2
+            //           %img{:src=>"assets/img/02.jpg", :alt=>""}
+            //     .col-lg-3
+            //       .content-img3 
+            //         .content-img-3  
+            //           %img{:src=>"assets/img/01.jpg", :alt=>""}
+
+          .col-lg-6
+            .team-about-content.wow.animated.fadeInRight{ 'data-wow-duration' => '1500ms', 'data-wow-delay' => '.2s'  }
+              .team-about-title
+                %h1 Nuestro gran 
+                %span equipo
+              %p En nuestro equipo contamos con profesionales en las distintas formaciones, todos trabajamos bajo la misma metodología para así brindar el mejor servicio a nuentros clientes.
+
+    
+= render ('app/partials/index/_footer.haml')
+

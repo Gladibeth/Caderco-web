@@ -1,0 +1,19 @@
+- slider = [{image: "assets/img/11.jpg", title: 'CADERCO', description: 'La compañia anonima de representaciones comerciales'}, {image: "assets/img/03.jpg", title: 'CADERCO', description: 'Su objetivo es brindar servicios de agenciamiento aduanal'},{image: "assets/img/15.jpg", title: 'CADERCO', description: 'La compañia anonima de representaciones comerciales'}, {image: "assets/img/10.jpg", title: 'CADERCO', description: 'Su objetivo es brindar servicios de agenciamiento aduanal'}]
+.carousel-content
+  .redes-social
+    %a{:href=>"#"}
+      %i.fa.fa-facebook
+    %a{:href=>"#"}
+      %i.fa.fa-instagram
+    %a{:href=>"#"}
+      %i.fa.fa-twitter
+  .carousel-divisor
+    .carrusel-slider
+      .single-item
+        - slider.each_with_index do |slide|
+          .item
+            %img.img-responsive{:src => "#{slide[:image]}"}/
+            .mask-item
+              .banner-info
+                %h1.title-banner.wow.animated.fadeInUp{ 'data-wow-duration' => '1500ms', 'data-wow-delay' => '.2s'  }= slide[:title]
+                %p.wow.animated.fadeInUp{ 'data-wow-duration' => '1500ms', 'data-wow-delay' => '.9s'  }= slide[:description]

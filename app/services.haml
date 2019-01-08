@@ -1,0 +1,12 @@
+:ruby
+  def render(partial)
+    Haml::Engine.new(File.read(partial)).render
+  end
+!!!
+%html{lang: "en"}
+  = render ('app/partials/head.haml')
+  %body
+    %section.home
+      = render ('app/partials/navbar_1.haml')
+      
+    = render ('app/partials/index/_services.haml')

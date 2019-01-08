@@ -1,0 +1,16 @@
+%section.services#services
+  .container
+    .content-services-title
+      %h1 Servicios
+      %p Nuestros servicios están especializados en la ejecución de Agenciamiento aduanal, agenciamiento naviero.
+    - services = [{image: "assets/img/07.jpg", alt: 'Agenciamiento Naviero', title: 'Agenciamiento Naviero', description: 'Carga y descarga de contenedores', ct: 'Ver más', date:''},{image: "assets/img/13.jpg", alt:'Agenciamiento Aduanal',title: 'Agenciamiento Aduanal', description: 'Internación de mercancía', ct: 'Ver más'},{image: "assets/img/14.jpg", alt:'Operación Portuaria', title: 'Operación Portuaria', description: 'Servicio de carga descarga en general zona portuaria', ct: 'Ver más'},{image: "assets/img/15.jpg",alt:'Manejo de materiales y desechos peligrosos', title: 'Manejo de materiales', description: 'Recolección, transporte, diesposición final', ct: 'Ver más'}]
+    .row
+      - services.each_with_index do |service, x|
+        .col-xl-6.col-lg-6.col-md-6.col-sm-6.content-services-card
+          .grid
+            %figure.effect-ming.wow.animated{class: " img-#{x} #{x.even? ? 'fadeInLeft' : 'fadeInRight'}", 'data-wow-duration' => '1500ms', 'data-wow-delay' => "#{x * 0.5}s"}
+              %img{ :alt => "#{service[:alt]}", :src => "#{service[:image]}"}/
+              %figcaption
+                %h4.title-service= service[:title]
+                %p.description-service= service[:description]
+                %a{:href => "services.html"}= service[:ct]
